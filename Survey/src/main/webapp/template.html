@@ -1,0 +1,24 @@
+<div class="quiz-area" ng-show="inProgress">
+	<div ng-show="!quizOver">
+		<h2 id="question">{{question}}</h2>
+		<ul id="options">
+			<li ng-repeat="option in options">
+				<label>
+					<input type="radio" name="answer" value="{{option}}">
+					{{option}}
+				</label>
+			</li>
+		</ul>
+		<button ng-click="nextQuestion()" ng-show="answerMode">Submit</button>
+	</div>
+
+	<div ng-show="quizOver">
+		<h2>Survey is over</h2>
+		<button ng-click="reset()">Restart</button>
+	</div>
+</div>
+
+<div class="intro" ng-show="!inProgress">
+	<p>Welcome to the Survey</p>
+	<button id="startQuiz" ng-click="start()">Start the Survey</button>
+</div>
